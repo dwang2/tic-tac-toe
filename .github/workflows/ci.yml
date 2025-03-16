@@ -46,6 +46,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+      with:
+        driver: docker-container
+        driver-opts: network=host
+
     - name: Docker meta
       id: meta
       uses: docker/metadata-action@v4
@@ -75,4 +81,4 @@ jobs:
         cache-from: type=gha
         cache-to: type=gha,mode=max
         build-args: |
-          CI=false 
+          CI=false
