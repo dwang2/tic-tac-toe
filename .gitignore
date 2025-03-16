@@ -1,0 +1,5 @@
+# exclude everything except directory foo/bar
+.DS_Store
+.env
+.vscode/*
+node_modules/*
